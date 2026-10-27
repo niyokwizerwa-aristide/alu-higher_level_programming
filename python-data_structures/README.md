@@ -1,2 +1,2 @@
-# Python - Data Structures
 - 0-print_list_integer.py: prints all integers of a list, one per line, using str.format()
+- 1-element_at.py: retrieves an element from a list, returning None if the index is out of range
