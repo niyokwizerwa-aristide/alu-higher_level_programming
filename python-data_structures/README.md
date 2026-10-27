@@ -10,3 +10,4 @@
 - 8-multiple_returns.py: returns a tuple with the length of a string and its first character
 - 9-max_integer.py: finds the biggest integer of a list
 - 9-max_integer.py: finds the biggest integer of a list
+- 10-divisible_by_2.py: finds all multiples of 2 in a list
