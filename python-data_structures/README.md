@@ -5,3 +5,4 @@
 - 3-print_reversed_list_integer.py: prints all integers of a list in reverse order
 - 4-new_in_list.py: replaces an element in a copy of a list without modifying the original
 - 5-no_c.py: removes all characters c and C from a string
+- 6-print_matrix_integer.py: prints a matrix of integers
