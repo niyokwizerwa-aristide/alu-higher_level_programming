@@ -8,3 +8,4 @@ This directory contains Python scripts about exception handling.
 - 1-safe_print_integer.py: prints an integer with str.format() and returns True, or False if it is not an integer
 - 2-safe_print_list_integers.py: prints the first x elements of a list and only integers
 - 2-safe_print_list_integers.py: prints the first x elements of a list and only integers
+- 3-safe_print_division.py: divides 2 integers and prints the result
