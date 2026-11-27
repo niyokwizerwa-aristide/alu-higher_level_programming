@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with *args and **kwargs update method."""
+"""Defines the Rectangle class with dictionary serialization."""
 from models.base import Base
 
 
@@ -95,3 +95,13 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in attrs:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of the Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
