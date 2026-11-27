@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with positional update method."""
+"""Defines the Rectangle class with *args and **kwargs update method."""
 from models.base import Base
 
 
@@ -85,8 +85,13 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
-        """Assign an argument to each attribute in order."""
+    def update(self, *args, **kwargs):
+        """Assign arguments to attributes via *args or **kwargs."""
         attrs = ["id", "width", "height", "x", "y"]
-        for attr, value in zip(attrs, args):
-            setattr(self, attr, value)
+        if args and len(args) > 0:
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, value)
