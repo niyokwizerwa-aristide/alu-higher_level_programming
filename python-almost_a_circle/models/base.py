@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Base class with instance creation from dictionary."""
+"""Defines the Base class with JSON file loading."""
 import json
 
 
@@ -51,3 +51,14 @@ class Base:
             return None
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances loaded from <Class name>.json."""
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                list_dicts = cls.from_json_string(f.read())
+        except FileNotFoundError:
+            return []
+        return [cls.create(**d) for d in list_dicts]
