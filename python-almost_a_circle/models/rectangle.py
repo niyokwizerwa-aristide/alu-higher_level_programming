@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with attribute validation."""
+"""Defines the Rectangle class with area calculation."""
 from models.base import Base
 
 
@@ -69,3 +69,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Return the area value of the Rectangle instance."""
+        return self.__width * self.__height
