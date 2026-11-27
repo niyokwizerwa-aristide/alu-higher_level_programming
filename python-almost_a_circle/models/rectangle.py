@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with area calculation."""
+"""Defines the Rectangle class with display method."""
 from models.base import Base
 
 
@@ -73,3 +73,8 @@ class Rectangle(Base):
     def area(self):
         """Return the area value of the Rectangle instance."""
         return self.__width * self.__height
+
+    def display(self):
+        """Print the Rectangle instance using the # character."""
+        for _ in range(self.__height):
+            print("#" * self.__width)
