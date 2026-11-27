@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with display method."""
+"""Defines the Rectangle class with custom __str__ representation."""
 from models.base import Base
 
 
@@ -78,3 +78,8 @@ class Rectangle(Base):
         """Print the Rectangle instance using the # character."""
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """Return the string representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
