@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with x and y display offsets."""
+"""Defines the Rectangle class with positional update method."""
 from models.base import Base
 
 
@@ -84,3 +84,9 @@ class Rectangle(Base):
         """Return the string representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Assign an argument to each attribute in order."""
+        attrs = ["id", "width", "height", "x", "y"]
+        for attr, value in zip(attrs, args):
+            setattr(self, attr, value)
