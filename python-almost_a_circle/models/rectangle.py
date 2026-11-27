@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Rectangle class with custom __str__ representation."""
+"""Defines the Rectangle class with x and y display offsets."""
 from models.base import Base
 
 
@@ -75,9 +75,10 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Print the Rectangle instance using the # character."""
+        """Print the Rectangle instance using # with x and y offsets."""
+        print("\n" * self.__y, end="")
         for _ in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """Return the string representation of the Rectangle."""
