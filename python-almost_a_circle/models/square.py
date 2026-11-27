@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Square class with update method."""
+"""Defines the Square class with dictionary serialization."""
 from models.rectangle import Rectangle
 
 
@@ -36,3 +36,12 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key in attrs:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of the Square."""
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
