@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Square class with size property."""
+"""Defines the Square class with update method."""
 from models.rectangle import Rectangle
 
 
@@ -25,3 +25,14 @@ class Square(Rectangle):
         """Return the string representation of the Square."""
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Assign arguments to attributes via *args or **kwargs."""
+        attrs = ["id", "size", "x", "y"]
+        if args and len(args) > 0:
+            for attr, value in zip(attrs, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, value)
