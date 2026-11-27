@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Base class with JSON deserialization."""
+"""Defines the Base class with instance creation from dictionary."""
 import json
 
 
@@ -39,3 +39,15 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return an instance with all attributes already set."""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            return None
+        dummy.update(**dictionary)
+        return dummy
